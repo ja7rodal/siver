@@ -30,3 +30,7 @@ group :test do
   gem 'vcr'
   gem 'webmock'
 end
+
+group :production do
+ gem 'pg'
+end
