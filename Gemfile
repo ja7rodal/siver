@@ -11,13 +11,16 @@ gem 'rest-client'
 gem 'sinatra'
 gem 'sinatra-activerecord'
 gem 'sinatra-flash'
-gem 'sqlite3'
 
 # DRY RB gems
 gem 'dry-monads'
 gem 'dry-transaction'
 gem 'dry-types'
 gem 'dry-validation'
+
+group :test, :development do
+  gem 'sqlite3'
+end
 
 group :test do
   gem 'database_cleaner-active_record'
@@ -32,5 +35,5 @@ group :test do
 end
 
 group :production do
- gem 'pg'
+  gem 'pg'
 end
