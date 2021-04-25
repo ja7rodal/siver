@@ -8,6 +8,6 @@ Gem::Specification.new do |s|
   s.description = 'Description'
   s.authors     = ['Jasson R']
   s.email       = '@gmail.com'
-  s.files       = ['ja7rodallib/app.rb']
+  s.files       = ['lib/app.rb']
   s.homepage    = ''
 end
