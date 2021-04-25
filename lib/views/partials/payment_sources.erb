@@ -1,0 +1,15 @@
+<p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapsePs" role="button" aria-expanded="false" aria-controls="collapsePs">
+    <h4>Payment_sources</h4>
+  </a>
+</p>
+<div class="collapse" id="collapsePs">
+  <div class="card card-body">
+    <% if @user.payment_sources %> 
+      <div><% @user.payment_sources.each do |ps| %>
+        <ul><li><%= "#{ps.name}: #{ps.brand} ** #{ps.last_four}" %></li></ul>
+      <% end %>
+      </div>
+    <% end %>  
+  </div>
+</div>

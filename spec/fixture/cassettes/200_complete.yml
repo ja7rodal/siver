@@ -1,0 +1,168 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.wompi.co/v1/merchants/pub_test_HIh40p8N0OTfdnwGhLcNbrjuHFhsxXAb
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.4.1p111
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - sandbox.wompi.co
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '984'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 22 Apr 2021 06:34:09 GMT
+      X-Amzn-Requestid:
+      - c5781879-545d-4b18-a374-d1f8d1a27ba0
+      X-Amzn-Remapped-Content-Length:
+      - '984'
+      X-Amzn-Remapped-Connection:
+      - keep-alive
+      Via:
+      - 1.1 vegur, 1.1 0cf45531e6680fc654de9fce5ded19c7.cloudfront.net (CloudFront)
+      X-Amz-Apigw-Id:
+      - eLDTRGY2oAMFuEw=
+      X-Amzn-Remapped-Server:
+      - Cowboy
+      X-Amzn-Remapped-Date:
+      - Thu, 22 Apr 2021 06:34:09 GMT
+      X-Cache:
+      - Miss from cloudfront
+      X-Amz-Cf-Pop:
+      - MIA3-C1
+      X-Amz-Cf-Id:
+      - tnCyWQys3-dcia49qChv7uxNMdJcMGnAyDMkYdS3v5MaaHgeRTzNRg==
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":10752,"name":"Ja7","email":"ja7rodal@gmail.com","contact_name":"Jasson
+        Rodriguez","phone_number":"+573145597090","active":true,"logo_url":null,"legal_name":"Jasson
+        Rodriguez","legal_id_type":"CC","legal_id":"11257227","public_key":"pub_test_HIh40p8N0OTfdnwGhLcNbrjuHFhsxXAb","accepted_currencies":["COP"],"fraud_javascript_key":"zzzzz","accepted_payment_methods":["BANCOLOMBIA_TRANSFER","NEQUI","PSE","CARD","BANCOLOMBIA_COLLECT"],"presigned_acceptance":{"acceptance_token":"eyJhbGciOiJIUzI1NiJ9.eyJjb250cmFjdF9pZCI6MSwicGVybWFsaW5rIjoiaHR0cHM6Ly93b21waS5jby93cC1jb250ZW50L3VwbG9hZHMvMjAxOS8wOS9URVJNSU5PUy1ZLUNPTkRJQ0lPTkVTLURFLVVTTy1VU1VBUklPUy1XT01QSS5wZGYiLCJmaWxlX2hhc2giOiIzZGNkMGM5OGU3NGFhYjk3OTdjZmY3ODExNzMxZjc3YiIsImppdCI6IjE2MTkwNzMyNDktNTk5NzAiLCJleHAiOjE2MTkwNzY4NDl9.VGeMr9zfMoxttOCPoZ7WAEmTt-AfR6vsuwCYOzVF98I","permalink":"https://wompi.co/wp-content/uploads/2019/09/TERMINOS-Y-CONDICIONES-DE-USO-USUARIOS-WOMPI.pdf","type":"END_USER_POLICY"}},"meta":{}}'
+  recorded_at: Thu, 22 Apr 2021 06:34:09 GMT
+- request:
+    method: post
+    uri: https://sandbox.wompi.co/v1/transactions
+    body:
+      encoding: UTF-8
+      string: '{"currency":"COP","payment_method":{"type":"CARD","installments":2},"reference":"1619073249","amount_in_cents":11199200,"payment_source_id":10661,"customer_email":"jphillips@shufflester.mil","acceptance_token":"eyJhbGciOiJIUzI1NiJ9.eyJjb250cmFjdF9pZCI6MSwicGVybWFsaW5rIjoiaHR0cHM6Ly93b21waS5jby93cC1jb250ZW50L3VwbG9hZHMvMjAxOS8wOS9URVJNSU5PUy1ZLUNPTkRJQ0lPTkVTLURFLVVTTy1VU1VBUklPUy1XT01QSS5wZGYiLCJmaWxlX2hhc2giOiIzZGNkMGM5OGU3NGFhYjk3OTdjZmY3ODExNzMxZjc3YiIsImppdCI6IjE2MTkwNzMyNDktNTk5NzAiLCJleHAiOjE2MTkwNzY4NDl9.VGeMr9zfMoxttOCPoZ7WAEmTt-AfR6vsuwCYOzVF98I"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.4.1p111
+      Authorization:
+      - Bearer prv_test_TLtMEGGALg5qMbOyE7NEdXgbramtaFPv
+      Content-Length:
+      - '562'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - sandbox.wompi.co
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '465'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 22 Apr 2021 06:34:10 GMT
+      X-Amzn-Requestid:
+      - 42b9badb-0f1f-4356-ab1e-30b4feec619b
+      X-Amzn-Remapped-Content-Length:
+      - '465'
+      X-Amzn-Remapped-Connection:
+      - keep-alive
+      Via:
+      - 1.1 vegur, 1.1 80677c288b4024a45c671874b4fa625a.cloudfront.net (CloudFront)
+      X-Amz-Apigw-Id:
+      - eLDTVEs3oAMFuyw=
+      Vary:
+      - Origin
+      X-Amzn-Remapped-Server:
+      - Cowboy
+      X-Amzn-Remapped-Date:
+      - Thu, 22 Apr 2021 06:34:10 GMT
+      X-Cache:
+      - Miss from cloudfront
+      X-Amz-Cf-Pop:
+      - MIA3-C1
+      X-Amz-Cf-Id:
+      - lR3vdn_g5x1bxbHCdRbyboaoU995kry55i2jIPxq4WmT6V8wB4lWQQ==
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"110752-1619073250-13683","created_at":"2021-04-22T06:34:10.287Z","amount_in_cents":11199200,"reference":"1619073249","customer_email":"jphillips@shufflester.mil","currency":"COP","payment_method_type":"CARD","payment_method":{"type":"CARD","installments":2},"status":"PENDING","status_message":null,"shipping_address":null,"redirect_url":null,"payment_source_id":10661,"payment_link_id":null,"customer_data":null,"bill_id":null,"taxes":[]},"meta":{}}'
+  recorded_at: Thu, 22 Apr 2021 06:34:10 GMT
+- request:
+    method: get
+    uri: https://sandbox.wompi.co/v1/transactions/110752-1619073250-13683
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.4.1p111
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - sandbox.wompi.co
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '522'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 22 Apr 2021 06:34:10 GMT
+      X-Amzn-Requestid:
+      - ffc30a4b-eeff-4b88-97f0-706da8f48635
+      X-Amzn-Remapped-Content-Length:
+      - '522'
+      X-Amzn-Remapped-Connection:
+      - keep-alive
+      Via:
+      - 1.1 vegur, 1.1 3f72a8b28c744ea2f627e9f8a8ac8283.cloudfront.net (CloudFront)
+      X-Amz-Apigw-Id:
+      - eLDTcEUkoAMFgVQ=
+      X-Amzn-Remapped-Server:
+      - Cowboy
+      X-Amzn-Remapped-Date:
+      - Thu, 22 Apr 2021 06:34:10 GMT
+      X-Cache:
+      - Miss from cloudfront
+      X-Amz-Cf-Pop:
+      - MIA3-C1
+      X-Amz-Cf-Id:
+      - IlpWzKX7SAg5s4nV0SkMFm3COU70xRiEjJz-7uUYH7DVOrJQbQRh9A==
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"110752-1619073250-13683","created_at":"2021-04-22T06:34:10.287Z","amount_in_cents":11199200,"reference":"1619073249","currency":"COP","payment_method_type":"CARD","payment_method":{"type":"CARD","installments":2},"redirect_url":null,"status":"APPROVED","status_message":null,"merchant":{"name":"Ja7","legal_name":"Jasson
+        Rodriguez","contact_name":"Jasson Rodriguez","phone_number":"+573145597090","logo_url":null,"legal_id_type":"CC","email":"ja7rodal@gmail.com","legal_id":"11257227"},"taxes":[]},"meta":{}}'
+  recorded_at: Thu, 22 Apr 2021 06:34:10 GMT
+recorded_with: VCR 6.0.0

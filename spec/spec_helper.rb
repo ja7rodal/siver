@@ -1,10 +1,13 @@
+# frozen_string_literal: true
+
+ENV['RACK_ENV'] ||= 'test'
+
 require_relative '../config/environment'
+require 'fabrication'
 require 'vcr'
 require 'webmock'
-require "rack/test"
-require "rspec-html-matchers"
-
-ENV['RACK_ENV'] = 'test'
+require 'rack/test'
+require 'rspec-html-matchers'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -18,10 +21,31 @@ RSpec.configure do |config|
   end
   config.include Rack::Test::Methods
   config.include RSpecHtmlMatchers
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
+end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+
+    # Keep as many of these lines as are necessary:
+    with.library :active_record
+    with.library :active_model
+  end
 end
 
 VCR.configure do |config|
-  config.cassette_library_dir = 'fixture/cassettes'
+  config.cassette_library_dir = 'spec/fixture/cassettes'
   config.hook_into :webmock
   # config.ignore_localhost = true
   # config.configure_rspec_metadata!

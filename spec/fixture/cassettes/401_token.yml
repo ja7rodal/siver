@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.wompi.co/v1/merchants/pub_test_HIh40p8N0OTfdnwGhLcNbrjuHFhsxXAb
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.4.1p111
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - sandbox.wompi.co
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '121'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 22 Apr 2021 04:37:42 GMT
+      X-Amzn-Requestid:
+      - bcb9d388-b98a-49a2-97d0-a1cdafed710d
+      X-Amzn-Remapped-Content-Length:
+      - '121'
+      X-Amzn-Remapped-Connection:
+      - keep-alive
+      Via:
+      - 1.1 vegur, 1.1 57b326460a798c60c06d0be01006b3d7.cloudfront.net (CloudFront)
+      X-Amz-Apigw-Id:
+      - eKyPiGDGoAMFsNw=
+      X-Amzn-Remapped-Server:
+      - Cowboy
+      X-Amzn-Remapped-Date:
+      - Thu, 22 Apr 2021 04:37:42 GMT
+      X-Cache:
+      - Error from cloudfront
+      X-Amz-Cf-Pop:
+      - MIA3-C1
+      X-Amz-Cf-Id:
+      - 6YSOZ8azPaoHG4MlqL3p1CVgLohr3V8LnW4v3wqzQyyZ9Sgf7td3XQ==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvciI6eyJ0eXBlIjoiSU5WQUxJRF9BQ0NFU1NfVE9LRU4iLCJyZWFzb24iOiJTZSBlc3BlcmFiYSB1bmEgbGxhdmUgcMO6YmxpY2EgbyBwcml2YWRhIHBlcm8gbm8gc2UgcmVjaWJpw7MgbmluZ3VuYSJ9fQ==
+  recorded_at: Thu, 22 Apr 2021 04:37:42 GMT
+recorded_with: VCR 6.0.0

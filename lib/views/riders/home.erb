@@ -1,0 +1,64 @@
+<p>Welcome Rider <%= @user.name %> <a href="/logout">Log Out</a></p>
+
+<div>
+<% if @user.in_service? %>
+  <% @user.trips.started.each do |trip| %>
+  <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+    <div class="card-header">Active <%= trip.status%></div>
+    <div class="card-body">
+      <p class="card-text">Driver: <%= "#{trip.driver.name}, #{trip.driver.email}" %></p>
+    </div>
+  </div>
+  <% end %>
+  <% @user.trips.finished.each do |trip| %>
+  <% transaction = trip&.transactions&.last  %>
+  <div class="card bg-light mb-3" style="max-width: 18rem;">
+    <div class="card-header">Active <%= trip.status%></div>
+    <div class="card-body">
+      <p class="card-text">Driver: <%= "#{trip.driver.name}, #{trip.driver.email}" %>
+        <p>
+          <form method="POST" action="/pay_trip">
+            <input type="hidden" name="trip_id" value="<%= trip.id %>">
+            <div class="border border-success border-top-0 border-left-0">
+              <% if !transaction&.pending? %>
+                <% @user.payment_sources.reverse.each do |ps| %>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="payment_source_id" value="<%= ps.id%>" checked>
+                    <label class="form-check-label" for="payment_source_id">
+                      <%= "#{ps.name}: #{ps.brand} ** #{ps.last_four}" %> 
+                    </label>
+                  </div>
+                <% end %>
+              <% end %>
+              </div>
+              <% if transaction&.created? || transaction.declined? %>
+                <div class="form-check">
+                  <button type="submit" class="btn btn-primary btn-lg active" style="margin-top: 1.5rem">Pay trip!</button>
+                </div>
+              <% end %>
+          </form>
+          <div>Amount: $ <%= (transaction.amount/100).to_s(:delimited) %></div>
+          <% if transaction&.pending? %>
+            <div> Wait for a minute, paying..</div>
+          <% end %>
+        </p>
+      </p>
+    </div>
+  </div>
+  <% end %>
+<% else %>
+  <% coords = @user.coords%>
+  You're here <%= origin= "#{coords.first}, #{coords.last}" %>  
+
+  <form method="POST" action="/start_trip">
+    <div class="form-group">
+      <label for="destination">Destination</label>
+      <input type="input" class="form-control" id="destination" aria-describedby="emailHelp" placeholder="Enter your destination">
+    </div>
+    <button type="submit" class="btn btn-primary">Star a trip!</button>
+  </form>
+<% end %>
+</div>
+
+<%= erb :'partials/payment_sources' %>
+<%= erb :'partials/trips' %>

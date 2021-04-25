@@ -1,0 +1,34 @@
+Welcome Driver <%= @user.name %> <a href="/logout">Log Out</a>
+
+<% if @user.in_service? %>
+  <% @user.trips.started.each do |trip| %>
+  <div class="card bg-ligth mb-3" style="max-width: 18rem;">
+    <div class="card-header">Active <%= trip.status%></div>
+    <div class="card-body">
+      <p class="card-text">Rider: <%= "#{trip.rider.name}, #{trip.rider.email}" %></p>
+          <form method="POST" action="/finish_trip">
+            <input type="hidden" name="trip_id" value="<%= trip.id %>">
+              <button type="submit" class="btn btn-primary">Finalize!</button>
+          </form>
+        </p>
+      </p>
+    </div>
+  </div>
+  <% end %>  
+
+<% @user.trips.finished.each do |trip| %>
+  <% transaction = trip&.transactions&.last  %>
+  <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+    <div class="card-header">Active <%= trip.status%></div>
+    <div class="card-body">
+      <p class="card-text">Rider: <%= "#{trip.rider.name}, #{trip.rider.email}" %></p>
+          <div>Amount: $ <%= (transaction.amount/100).to_s(:delimited) %></div>
+          <% if transaction&.pending? %>
+            <div> Wait for a minute, paying..</div>
+          <% end %>
+    </div>
+  </div>
+<% end %>
+<% end %>
+
+<%= erb :'partials/trips' %>

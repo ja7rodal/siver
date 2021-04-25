@@ -1,0 +1,51 @@
+<p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseTrips" role="button" aria-expanded="false" aria-controls="collapseTrips">
+      <h4>Trips & Transactions</h4>
+  </a>
+</p>
+<div class="collapse" id="collapseTrips">
+  <div class="card card-body">
+    <div class="row">
+      <div class="col-sm">
+        <% @user.transactions.approved.reverse.each do |trx| %>
+        <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+          <div class="card-header">
+            <p>Status: <%= trx.trip.status%></p>
+            <p>Date: <%= trx.created_at %></p>
+          </div>
+          <div class="card-body">
+            <% trip = trx.trip %>
+            <p class="card-text"><%= "Driver: #{trip.driver.name}, #{trip.driver.email}" if @user.is_a?(Rider) %></p>
+            <p class="card-text"><%= "Rider: #{trip.rider.name}, #{trip.rider.email}" if @user.is_a?(Driver) %></p>
+            <div>
+              <p>Amount: $ <%= "#{(trx.amount/100).to_s(:delimited)}   - " %><small><%= trx.status %></small></p>
+              <p>Ref: <%= trx.reference %></p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+
+      <div class="col-sm">
+        <% @user.transactions.declined.reverse.each do |trx| %>
+        <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+          <div class="card-header">
+            <p>Status: <%= trx.trip.status%></p>
+            <p>Date: <%= trx.created_at %></p>
+          </div>
+          <div class="card-body">
+            <% trip = trx.trip %>
+            <p class="card-text"><%= "Driver: #{trip.driver.name}, #{trip.driver.email}" if @user.is_a?(Rider) %></p>
+            <p class="card-text"><%= "Rider: #{trip.rider.name}, #{trip.rider.email}" if @user.is_a?(Driver) %></p>
+            <div>
+              <p>Amount: $ <%= "#{(trx.amount/100).to_s(:delimited)}   - " %><small><%= trx.status %></small></p>
+              <p>Ref: <%= trx.reference %></p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,168 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.wompi.co/v1/merchants/pub_test_HIh40p8N0OTfdnwGhLcNbrjuHFhsxXAb
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.4.1p111
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - sandbox.wompi.co
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '984'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 22 Apr 2021 06:44:34 GMT
+      X-Amzn-Requestid:
+      - 8f4d7c3a-bc5b-4177-85e9-458bda9699aa
+      X-Amzn-Remapped-Content-Length:
+      - '984'
+      X-Amzn-Remapped-Connection:
+      - keep-alive
+      Via:
+      - 1.1 vegur, 1.1 2e51d21cbcece0c8168928f0f01f11e4.cloudfront.net (CloudFront)
+      X-Amz-Apigw-Id:
+      - eLE03EoYIAMFU5A=
+      X-Amzn-Remapped-Server:
+      - Cowboy
+      X-Amzn-Remapped-Date:
+      - Thu, 22 Apr 2021 06:44:33 GMT
+      X-Cache:
+      - Miss from cloudfront
+      X-Amz-Cf-Pop:
+      - MIA3-C1
+      X-Amz-Cf-Id:
+      - njLHweKvz7-zNMTprjX1qffeLmw5mMA1Bylkdj-konY0bwyHnwVPWQ==
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":10752,"name":"Ja7","email":"ja7rodal@gmail.com","contact_name":"Jasson
+        Rodriguez","phone_number":"+573145597090","active":true,"logo_url":null,"legal_name":"Jasson
+        Rodriguez","legal_id_type":"CC","legal_id":"11257227","public_key":"pub_test_HIh40p8N0OTfdnwGhLcNbrjuHFhsxXAb","accepted_currencies":["COP"],"fraud_javascript_key":"zzzzz","accepted_payment_methods":["BANCOLOMBIA_TRANSFER","NEQUI","PSE","CARD","BANCOLOMBIA_COLLECT"],"presigned_acceptance":{"acceptance_token":"eyJhbGciOiJIUzI1NiJ9.eyJjb250cmFjdF9pZCI6MSwicGVybWFsaW5rIjoiaHR0cHM6Ly93b21waS5jby93cC1jb250ZW50L3VwbG9hZHMvMjAxOS8wOS9URVJNSU5PUy1ZLUNPTkRJQ0lPTkVTLURFLVVTTy1VU1VBUklPUy1XT01QSS5wZGYiLCJmaWxlX2hhc2giOiIzZGNkMGM5OGU3NGFhYjk3OTdjZmY3ODExNzMxZjc3YiIsImppdCI6IjE2MTkwNzM4NzQtMTI4NDgiLCJleHAiOjE2MTkwNzc0NzR9.XwyKwIotXJN6KAysTuL96myKk28NwbXJgwyY120AkrI","permalink":"https://wompi.co/wp-content/uploads/2019/09/TERMINOS-Y-CONDICIONES-DE-USO-USUARIOS-WOMPI.pdf","type":"END_USER_POLICY"}},"meta":{}}'
+  recorded_at: Thu, 22 Apr 2021 06:44:34 GMT
+- request:
+    method: post
+    uri: https://sandbox.wompi.co/v1/transactions
+    body:
+      encoding: UTF-8
+      string: '{"currency":"COP","payment_method":{"type":"CARD","installments":2},"reference":"1619073874","amount_in_cents":3463900,"payment_source_id":10661,"customer_email":"kmason@jazzy.edu","acceptance_token":"eyJhbGciOiJIUzI1NiJ9.eyJjb250cmFjdF9pZCI6MSwicGVybWFsaW5rIjoiaHR0cHM6Ly93b21waS5jby93cC1jb250ZW50L3VwbG9hZHMvMjAxOS8wOS9URVJNSU5PUy1ZLUNPTkRJQ0lPTkVTLURFLVVTTy1VU1VBUklPUy1XT01QSS5wZGYiLCJmaWxlX2hhc2giOiIzZGNkMGM5OGU3NGFhYjk3OTdjZmY3ODExNzMxZjc3YiIsImppdCI6IjE2MTkwNzM4NzQtMTI4NDgiLCJleHAiOjE2MTkwNzc0NzR9.XwyKwIotXJN6KAysTuL96myKk28NwbXJgwyY120AkrI"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.4.1p111
+      Authorization:
+      - Bearer prv_test_TLtMEGGALg5qMbOyE7NEdXgbramtaFPv
+      Content-Length:
+      - '552'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - sandbox.wompi.co
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '455'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 22 Apr 2021 06:44:34 GMT
+      X-Amzn-Requestid:
+      - 51ec1d1b-42a2-4132-a9c4-f0114c378fde
+      X-Amzn-Remapped-Content-Length:
+      - '455'
+      X-Amzn-Remapped-Connection:
+      - keep-alive
+      Via:
+      - 1.1 vegur, 1.1 5b065c27afb6cf16a3aa6aae83715631.cloudfront.net (CloudFront)
+      X-Amz-Apigw-Id:
+      - eLE08E1kIAMFjVA=
+      Vary:
+      - Origin
+      X-Amzn-Remapped-Server:
+      - Cowboy
+      X-Amzn-Remapped-Date:
+      - Thu, 22 Apr 2021 06:44:34 GMT
+      X-Cache:
+      - Miss from cloudfront
+      X-Amz-Cf-Pop:
+      - MIA3-C1
+      X-Amz-Cf-Id:
+      - zf9qVpbCqNzQuYhCH7MHwKW7w27WbpTXVmreRORF9o7GwnrxR_4gcw==
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"110752-1619073874-15611","created_at":"2021-04-22T06:44:34.802Z","amount_in_cents":3463900,"reference":"1619073874","customer_email":"kmason@jazzy.edu","currency":"COP","payment_method_type":"CARD","payment_method":{"type":"CARD","installments":2},"status":"PENDING","status_message":null,"shipping_address":null,"redirect_url":null,"payment_source_id":10661,"payment_link_id":null,"customer_data":null,"bill_id":null,"taxes":[]},"meta":{}}'
+  recorded_at: Thu, 22 Apr 2021 06:44:34 GMT
+- request:
+    method: get
+    uri: https://sandbox.wompi.co/v1/transactions/110752-1619073874-15611
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.4.1p111
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - sandbox.wompi.co
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '79'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 22 Apr 2021 06:44:35 GMT
+      X-Amzn-Requestid:
+      - 1b466c21-88ec-4639-ae47-9d5c84d01b10
+      X-Amzn-Remapped-Content-Length:
+      - '79'
+      X-Amzn-Remapped-Connection:
+      - keep-alive
+      Via:
+      - 1.1 vegur, 1.1 2feed206ccd80c991a2378002008d9f0.cloudfront.net (CloudFront)
+      X-Amz-Apigw-Id:
+      - eLE1AGqZoAMFm7w=
+      X-Amzn-Remapped-Server:
+      - Cowboy
+      X-Amzn-Remapped-Date:
+      - Thu, 22 Apr 2021 06:44:35 GMT
+      X-Cache:
+      - Error from cloudfront
+      X-Amz-Cf-Pop:
+      - MIA3-C1
+      X-Amz-Cf-Id:
+      - _NZh8HEjHq9N9-BNxeTA-kWfBLdS2fhRrgV7qWJWAS2uskkyfal34w==
+    body:
+      encoding: UTF-8
+      string: '{"error":{"type":"NOT_FOUND_ERROR","reason":"La entidad solicitada
+        no existe"}}'
+  recorded_at: Thu, 22 Apr 2021 06:44:35 GMT
+recorded_with: VCR 6.0.0
